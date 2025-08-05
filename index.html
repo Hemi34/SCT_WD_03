@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic-Tac-Toe — Full Page Responsive UI</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Tic-Tac-Toe</div>
+      <div class="top-actions">
+        <button id="restartBtn" class="btn ghost">Reset All</button>
+        <button id="newRoundBtn" class="btn primary">New Round</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="game-area">
+        <div class="left-panel">
+          <div class="meta-card">
+            <div class="turn-row">
+              <div class="label">Turn</div>
+              <div id="turn" class="turn-pill">X</div>
+            </div>
+
+            <div class="scoreboard">
+              <div><strong>X</strong>: <span id="scoreX">0</span></div>
+              <div><strong>O</strong>: <span id="scoreO">0</span></div>
+              <div><strong>Draws</strong>: <span id="scoreD">0</span></div>
+            </div>
+
+            <div class="controls">
+              <button id="undoBtn" class="btn">Undo</button>
+              <button id="autoFillBtn" class="btn ghost">Hint</button>
+            </div>
+
+            <p class="muted">Use keyboard: Tab to focus cells and Enter / Space to play. X goes first.</p>
+          </div>
+        </div>
+
+        <div class="board-wrap">
+          <div id="board" class="board" role="grid" aria-label="Tic Tac Toe board">
+            <button class="cell" data-index="0" aria-label="cell 1"></button>
+            <button class="cell" data-index="1" aria-label="cell 2"></button>
+            <button class="cell" data-index="2" aria-label="cell 3"></button>
+            <button class="cell" data-index="3" aria-label="cell 4"></button>
+            <button class="cell" data-index="4" aria-label="cell 5"></button>
+            <button class="cell" data-index="5" aria-label="cell 6"></button>
+            <button class="cell" data-index="6" aria-label="cell 7"></button>
+            <button class="cell" data-index="7" aria-label="cell 8"></button>
+            <button class="cell" data-index="8" aria-label="cell 9"></button>
+          </div>
+        </div>
+
+        <aside class="right-panel">
+          <div class="panel">
+            <h3>How to play</h3>
+            <ul>
+              <li>Two players (local): X and O.</li>
+              <li>Make three in a row to win.</li>
+              <li>New Round keeps scores; Reset All clears them.</li>
+            </ul>
+            <h4>Features</h4>
+            <ul>
+              <li>Responsive fullscreen layout</li>
+              <li>Big, square board that always fits</li>
+              <li>Win popup + highlighted line</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Tic-Tac-Toe Demo</small>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <h2 id="modalTitle">Player X wins!</h2>
+      <p id="modalMsg">Congratulations — Player X</p>
+      <div class="modal-actions">
+        <button id="modalPlayBtn" class="btn primary">Play Again</button>
+        <button id="modalCloseBtn" class="btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
